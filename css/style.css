@@ -26,9 +26,9 @@ ul {
     grid-area: header;
 }
 
-/* .navbar .navbar-collapse {
+.navbar .navbar-collapse {
     padding: 20px;
-} */
+}
 
 .navbar-brand {
     text-transform: uppercase;
@@ -48,7 +48,7 @@ ul {
 }
 
 .carousel-inner {
-    max-height: 600px;
+    
 }
 
 .description {
