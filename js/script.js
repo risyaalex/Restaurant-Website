@@ -1,31 +1,19 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Change background (.section2, index.html)
+  const section2 = document.querySelector('.section-2');
+  const headingOne = document.getElementById('headingOne');
+  const headingTwo = document.getElementById('headingTwo');
+  const headingThree = document.getElementById('headingThree');
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Mobile menu show
-    document.querySelector(".navbar-toggle").addEventListener("click", function () {
-      var links = document.querySelectorAll(".navbar-menu");
-      for (var i = 0; i < links.length; i++) {
-        links[i].classList.toggle("active");
-      }
-    });
-    // Mobile menu closes on click
-    var menuItems = document.querySelectorAll(".navbar-menu");
-        for (var i = 0; i < menuItems.length; i++) {
-            menuItems[i].addEventListener("click", function () {
-            var links = document.querySelectorAll(".navbar-menu");
-            for (var i = 0; i < links.length; i++) {
-                links[i].classList.remove("active"); 
-        }
-        });
-    }
-    // Active menu item on click
-    var menuLinks = document.querySelectorAll(".navbar-menu a");
-    menuLinks.forEach(function(link) {
-        link.addEventListener("click", function(event) {
-        menuLinks.forEach(function(link) {
-            link.classList.remove("mark");
-            });
-        this.classList.add("mark");
-        });
-    });
-    
+  headingOne.addEventListener('click', function() {
+    section2.style.background = 'url(../images/wine.jpg) center/cover no-repeat';
+  });
+
+  headingTwo.addEventListener('click', function() {
+    section2.style.background = 'url(../images/jazz.jpeg) center/cover no-repeat';
+  });
+
+  headingThree.addEventListener('click', function() {
+    section2.style.background = 'url(../images/meal.jpg) center/cover no-repeat';
+  });
 });
