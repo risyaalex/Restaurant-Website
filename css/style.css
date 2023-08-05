@@ -47,7 +47,7 @@ ul {
 }
 
 .dropdown-menu .active {
-background-color: #333 !important
+background-color: black !important
 }
 
 .dropdown-divider {
@@ -110,13 +110,35 @@ background-color: #333 !important
 }
 
 .text .blockquote {
-    text-align: right;
+    text-align: left;
     font-size: 1.2em;
     font-style: italic;
 }
 article h1 {
     text-align: center;
     margin: 20px;
+}
+
+article .text {
+    margin: 0 12%;
+}
+
+article .text .image-left {
+    width: 300px;
+    float: left;
+    margin: 10px 30px 10px 0;
+}
+
+article .text .image-right {
+    width: 400px;
+    float: right;
+    margin: 10px 0 10px 30px;
+}
+
+article .text ul,
+article .text ol {
+    padding: 1rem !important;
+    line-height: 1.5rem;
 }
 
 
@@ -255,32 +277,76 @@ article h1 {
     .description .text h1, .description .text h2 {
         text-align: center;
     }
+    article .text {
+    margin: 0 2%;
+    }
+
+    .image-center {
+        text-align: center;
+    }
+
+    article .text .image-left {
+        width: 300px;
+        float: left;
+        margin: 10px 20px 10px 0;
+    }
+
+    article .text .image-right {
+        width: 60%;
+        float: none;
+        margin: 10px 0;
+    }
 }
 
 /* SMALL and MEDIUM */
 
 @media only screen and (max-width: 991px) {
-.navbar-brand, .navbar-collapse {
-    padding: 5px 15px;
-    margin-left: 5px;
-}
-.grid-text {
-    grid-template-columns: 100%;
-}
-.reverce {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-}
-dl,
-ol,
-ul {
-    padding: 0 1rem !important;
-}
-.text .buttons {
-    grid-template-columns: 100%;
-    gap: 0px;
-}
+    .navbar-brand, .navbar-collapse {
+        padding: 5px 15px;
+        margin-left: 5px;
+    }
+    .grid-text {
+        grid-template-columns: 100%;
+    }
+    .reverce {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    dl,
+    ol,
+    ul {
+        padding: 0 1rem !important;
+    }
+    .text .buttons {
+        grid-template-columns: 100%;
+        gap: 0px;
+    }
+    article .text {
+        margin: 0 2%;
+    }
+
+    .image-center {
+        text-align: center;
+    }
+
+    article .text .image-left {
+        max-width: 80%;
+        float: none;
+        margin: 10px 0;
+    }
+
+    article .text .image-right {
+        max-width: 80%;
+        float: none;
+        margin: 10px 0;
+    }
+
+    article .text ul,
+    article .text ol {
+        padding: 1rem 0 1rem 1rem !important;
+        line-height: 1.5rem;
+    }
 }
 
 
