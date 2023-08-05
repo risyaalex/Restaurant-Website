@@ -14,6 +14,7 @@ ul {
     padding: 0 2rem !important;
 }
 
+
 /* Navigation Bar */
 
 .dropdown-menu {
@@ -54,6 +55,7 @@ background-color: black !important
     margin:  0 !important;
 }
 
+
 /* Slider */
 
 .carousel-item {
@@ -91,6 +93,10 @@ background-color: black !important
     width: 100%;
 }
 
+.hide {
+    display: none;
+}
+
 .img-hidden-left, .img-hidden-right {
     display: none;
 }
@@ -114,6 +120,8 @@ background-color: black !important
     font-size: 1.2em;
     font-style: italic;
 }
+
+/* About page */
 article h1 {
     text-align: center;
     margin: 20px;
@@ -141,8 +149,24 @@ article .text ol {
     line-height: 1.5rem;
 }
 
+/* Menu page */
+
+.main-image {
+    background: url("../images/menu.jpg");
+    height: 400px;
+}
+
 
 /* Accordion */
+.accordion-button {
+    font-size: 1.2rem !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-color: #eee;
+    border-radius: 50%;
+    }
+
 .accordion-button:focus { 
     box-shadow: none !important;
 }
