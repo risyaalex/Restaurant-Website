@@ -14,6 +14,14 @@ ul {
     padding: 0 2rem !important;
 }
 
+.text {
+    min-height: 80vh;
+}
+
+.center {
+    text-align: center;
+}
+
 
 /* Navigation Bar */
 
@@ -127,6 +135,7 @@ background-color: black !important
 }
 
 /* About page */
+
 article h1 {
     text-align: center;
     margin: 20px;
@@ -224,6 +233,14 @@ article .text ol {
 .card .card-price {
     align-self: self-end;
     font-size: 1.2rem;
+}
+
+/* Reservations */
+
+.reservations {
+    padding: 20px 30%;
+    background-color: #eeeeee;
+    margin-bottom: 20px;
 }
 
 
@@ -391,6 +408,9 @@ article .text ol {
         float: none;
         margin: 10px 0;
     }
+    .reservations {
+        padding: 5% 30%;
+    }
 }
 
 /* SMALL and MEDIUM */
@@ -463,6 +483,9 @@ article .text ol {
     .menu-grid {
             grid-template-columns: 100%;
         }
+    .reservations {
+        padding: 10%;
+    }    
 }
 
 
