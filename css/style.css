@@ -200,11 +200,43 @@ article .text ol {
     max-height: 250px;
 }
 
-.header-menu h1, .header-reservation h1, .header-contacts h1 {
+.header-events {
+    background: url("../images/events.jpg") no-repeat;
+    max-height: 250px;
+}
+
+.header-about {
+    background: url("../images/about.jpg") no-repeat;
+    max-height: 250px;
+}
+
+.header-menu h1, .header-reservation h1, .header-contacts h1, .header-events h1, .header-about h1, .header-gallery h1 {
     margin: 0;
     padding: 100px;
     text-shadow: 0 0 30px #ffffff;
     font-size: 3rem;
+}
+
+/* Events & Specials */
+
+.grid-text-events {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.events h2 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.events .card-body {
+    margin-bottom: 20px;
+    border: none;
+    padding: 0px 0;
+}
+
+.events a {
+    width: 50%;
 }
 
 /* Menu page */
@@ -519,9 +551,14 @@ article .text ol {
         padding: 5px 15px;
         margin-left: 5px;
     }
-    .grid-text {
+    .grid-text, .grid-text-events {
         grid-template-columns: 100%;
     }
+
+    .grid-text-events .text {
+        padding: 15px 30px;
+    }
+
     .reverce {
         display: flex;
         flex-wrap: wrap-reverse;
@@ -561,7 +598,12 @@ article .text ol {
         padding: 1rem 0 1rem 1rem !important;
         line-height: 1.5rem;
     }
-    .header-menu h1, .header-contacts h1,  .header-reservation h1 {
+        .header-menu h1,
+        .header-reservation h1,
+        .header-contacts h1,
+        .header-events h1,
+        .header-about h1,
+        .header-gallery h1 {
         margin: 0;
         padding: 50px;
         font-size: 2rem;
