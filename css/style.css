@@ -15,11 +15,29 @@ ul {
 }
 
 .text {
-    min-height: 80vh;
+    min-height: 65vh;
 }
 
 .center {
     text-align: center;
+}
+
+.font-size-22 {
+    font-size: 1.4rem;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.red {
+    color: rgb(214, 20, 20);
+}
+label {
+    margin: 10px 0 5px 0;
+}
+textarea {
+    padding: 10px;
 }
 
 
@@ -43,9 +61,11 @@ ul {
     padding: 5px 15px;
     flex-grow: 1;
 }
+
 .navbar-collapse {
     margin: 0 25px 0 0;
 }
+
 .navbar-nav {
     flex-grow: 1;
     justify-content: space-evenly;
@@ -185,6 +205,7 @@ article .text ol {
 }
 
 /* Cards */
+
 .card-body {
     display: grid;
     grid-template-columns: 100%;
@@ -243,6 +264,61 @@ article .text ol {
     margin: 20px 0 20px 0;
     border-radius: 10px;
     box-shadow: 0 0 5px #eee;
+}
+
+/* Contacts */
+
+.contacts h3 {
+    margin-top: 30px;
+}
+
+.contacts h2, .contact-form h2 {
+    margin-bottom: 30px;
+}
+
+.contacts .link a {
+    color: rgb(214, 20, 20);
+    text-decoration: none;
+}
+
+.contacts .link a:hover {
+    text-decoration: underline;
+}
+
+.contacts .link a:active {
+    color: rgb(76, 5, 5);
+    text-decoration: none;
+}
+
+.contact-form {
+    padding: 20px 30%;
+    background-color: #eeeeee;
+    margin: 20px 0 0 0;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #eee;
+    width: 100%;
+}
+
+.form-group textarea {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-group textarea:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+}
+
+/* Map */
+
+#map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -413,6 +489,15 @@ article .text ol {
     .reservations {
         padding: 5% 30%;
     }
+
+    .contact-form {
+        padding: 5% 30%;    
+    }
+    #map-container, #map-container iframe  {
+        min-height: 400px;
+    }
+
+
 }
 
 /* SMALL and MEDIUM */
@@ -478,16 +563,26 @@ article .text ol {
         grid-column-start:auto;
         grid-column-end: auto;
     }
+    #map-container,
+    #map-container iframe {
+        min-height: 300px;
+    }
 
 }
 
 @media only screen and (max-width: 576px) {
+
     .menu-grid {
             grid-template-columns: 100%;
         }
+
     .reservations {
         padding: 10%;
     }    
+
+    .contact-form {
+        padding: 10%;
+    }
 }
 
 
