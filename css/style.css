@@ -721,6 +721,10 @@ article .text ol {
         font-size: 1.5rem;
     }
 
+    .text h3 {
+        font-size: 1rem;
+    }
+
     .menu-grid {
             grid-template-columns: 100%;
         }
