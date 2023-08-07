@@ -645,6 +645,10 @@ article .text ol {
         margin: 0 2%;
     }
 
+    .about h2, .about h3 {
+        text-align: center;
+    }
+
     .image-center {
         text-align: center;
     }
@@ -666,12 +670,12 @@ article .text ol {
         padding: 1rem 0 1rem 1rem !important;
         line-height: 1.5rem;
     }
-        .header-menu h1,
-        .header-reservation h1,
-        .header-contacts h1,
-        .header-events h1,
-        .header-about h1,
-        .header-gallery h1 {
+    .header-menu h1,
+    .header-reservation h1,
+    .header-contacts h1,
+    .header-events h1,
+    .header-about h1,
+    .header-gallery h1 {
         margin: 0;
         padding: 50px;
         font-size: 2rem;
@@ -705,6 +709,17 @@ article .text ol {
 }
 
 @media only screen and (max-width: 576px) {
+
+    .header-menu h1,
+    .header-reservation h1,
+    .header-contacts h1,
+    .header-events h1,
+    .header-about h1,
+    .header-gallery h1 {
+        margin: 0;
+        padding: 30px;
+        font-size: 1.5rem;
+    }
 
     .menu-grid {
             grid-template-columns: 100%;
