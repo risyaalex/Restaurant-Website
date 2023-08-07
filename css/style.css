@@ -516,9 +516,9 @@ article .text ol {
     top: 0;
     left: 0;
     z-index: 99999 !important;
-    width: 100vw;
     height: 100vh;
-    object-fit: cover;
+    width: 100vw;
+    object-fit: contain;
     background: rgba(0, 0, 0, 0.7);
 }
 
