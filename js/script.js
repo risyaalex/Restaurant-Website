@@ -16,4 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
   headingThree.addEventListener('click', function() {
     section2.style.background = 'url(../images/meal.jpg) center/cover no-repeat';
   });
+
+});
+
+
+// Gallery (gallery.html)
+
+function toggleFullScreen() {
+  this.classList.toggle("full");
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const galleryImages = document.querySelectorAll(".gallery-image");
+  for (let i of galleryImages) {
+    i.onclick = toggleFullScreen;
+  }
 });
