@@ -722,7 +722,7 @@ article .text ol {
     }
 
     .text h3 {
-        font-size: 1rem;
+        font-size: calc(1.325rem + .9vw);
     }
 
     .menu-grid {
