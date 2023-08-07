@@ -183,19 +183,31 @@ article .text ol {
     line-height: 1.5rem;
 }
 
-/* Menu page */
+/* Images for headers */
 
-.main-image {
-    background: url("../images/menu.jpg");
+.header-menu {
+    background: url("../images/menu.jpg") no-repeat;
     max-height: 250px;
 }
 
-.main-image h1 {
+.header-reservation {
+    background: url("../images/reservation.jpg") no-repeat;
+    max-height: 250px;    
+}
+
+.header-contacts {
+    background: url("../images/contacts.jpg") no-repeat;
+    max-height: 250px;
+}
+
+.header-menu h1, .header-reservation h1, .header-contacts h1 {
     margin: 0;
     padding: 100px;
     text-shadow: 0 0 30px #ffffff;
     font-size: 3rem;
 }
+
+/* Menu page */
 
 .menu-grid {
     display: grid;
@@ -549,7 +561,7 @@ article .text ol {
         padding: 1rem 0 1rem 1rem !important;
         line-height: 1.5rem;
     }
-    .main-image h1 {
+    .header-menu h1, .header-contacts h1,  .header-reservation h1 {
         margin: 0;
         padding: 50px;
         font-size: 2rem;
