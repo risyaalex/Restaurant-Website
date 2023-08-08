@@ -1,7 +1,7 @@
 
 // Change background (.section2, index.html)
 
-if (window.location.href.includes("/index.html") || window.location.href === "https://main--aesthetic-praline-1021f7.netlify.app/) {
+if (window.location.pathname.endsWith("/index.html")) {
 
   document.addEventListener('DOMContentLoaded', function () {
     const section2 = document.querySelector('.section-2');
@@ -30,7 +30,7 @@ if (window.location.href.includes("/index.html") || window.location.href === "ht
 
 // Gallery (gallery.html)
 
-if (window.location.href.includes("/gallery.html") || window.location.href === "https://main--aesthetic-praline-1021f7.netlify.app/gallery") {
+if (window.location.pathname.endsWith("/gallery.html")) {
 
 
   function toggleFullScreen() {
@@ -49,8 +49,8 @@ if (window.location.href.includes("/gallery.html") || window.location.href === "
 
 // Form validation (reservations.html)
 
-if (window.location.href.includes("/reservations.html") || window.location.href === "https://main--aesthetic-praline-1021f7.netlify.app/reservations") {
-
+if (window.location.pathname.endsWith("/reservations.html")) {
+console.log(window.location.pathname)
 
   const userNameInput = document.getElementById("name")
   const userDateInput = document.getElementById("date")
@@ -137,7 +137,7 @@ if (window.location.href.includes("/reservations.html") || window.location.href 
 
 // Form validation (contacts.html)
 
-if (window.location.href.includes("/contacts.html") || window.location.href === "https://main--aesthetic-praline-1021f7.netlify.app/contacts") {
+if (window.location.pathname.endsWith("/contacts.html")) {
 
   const userNameInput = document.getElementById("name")
   const userEmailInput = document.getElementById("email")
