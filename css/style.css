@@ -429,6 +429,18 @@ article .text ol {
     box-shadow: 0 0 5px #eee;
 }
 
+.error {
+    color: rgb(214, 20, 20);
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.reservationsresult {
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(178, 255, 229);
+}
+
 /* Contacts */
 
 .contacts h3 {

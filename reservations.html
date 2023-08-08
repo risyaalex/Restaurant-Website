@@ -117,8 +117,10 @@
                 class="form-control"
                 id="name"
                 name="name"
+                placeholder="Your name"
                 required
               />
+              <p id="reservationsname" class="error"></p>
             </div>
             <div class="form-group">
               <label for="date">Date:</label>
@@ -129,6 +131,7 @@
                 name="date"
                 required
               />
+              <p id="reservationsdate" class="error"></p>
             </div>
             <div class="form-group">
               <label for="time">Time:</label>
@@ -139,6 +142,7 @@
                 name="time"
                 required
               />
+              <p id="reservationstime" class="error"></p>
             </div>
             <div class="form-group">
               <label for="guests">Number of Guests:</label>
@@ -148,12 +152,18 @@
                 id="guests"
                 name="guests"
                 min="1"
+                placeholder="Number of Guests"
                 required
               />
+              <p id="reservationsguests" class="error"></p>
             </div>
-            <button type="submit" class="btn btn-primary bg-dark text-light">
+            <button class="btn btn-primary bg-dark text-light" id="submit">
               Submit Reservation
             </button>
+            <button class="btn btn-primary bg-dark text-light" id="reset">
+              Clear data
+            </button>
+            <p id="reservationsresult"></p>
           </div>
           <div>
             <p>
