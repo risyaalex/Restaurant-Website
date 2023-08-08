@@ -302,12 +302,12 @@ article .text ol {
 /* Images for headers */
 
 .header-menu {
-    background: url("../images/menu.jpg") no-repeat;
+    background: url("../images/menu.jpg") top/cover no-repeat;
     max-height: 250px;
 }
 
 .header-reservation {
-    background: url("../images/reservation.jpg") no-repeat;
+    background: url("../images/reservation.jpg") top/cover no-repeat;
     max-height: 250px;    
 }
 
