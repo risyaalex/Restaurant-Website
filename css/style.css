@@ -486,6 +486,12 @@ article .text ol {
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
 }
 
+.contactsresult {
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(178, 255, 229);
+}
+
 #map-container {
     position: relative;
     width: 100%;

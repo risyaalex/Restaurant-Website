@@ -1,6 +1,8 @@
+
+// Change background (.section2, index.html)
+
 if (window.location.pathname.endsWith("/index.html")) {
 
-  // Change background (.section2, index.html)
   document.addEventListener('DOMContentLoaded', function () {
     const section2 = document.querySelector('.section-2');
     const headingOne = document.getElementById('headingOne');
@@ -25,8 +27,11 @@ if (window.location.pathname.endsWith("/index.html")) {
   
 }
 
+
+// Gallery (gallery.html)
+
 if (window.location.pathname.endsWith("/gallery.html")) {
-  // Gallery (gallery.html)
+
 
   function toggleFullScreen() {
     this.classList.toggle("full");
@@ -41,9 +46,11 @@ if (window.location.pathname.endsWith("/gallery.html")) {
   
 }
 
+
+// Form validation (reservations.html)
+
 if (window.location.pathname.endsWith("/reservations.html")) {
 
-  // Form validation (reservations.html)
 
   const userNameInput = document.getElementById("name")
   const userDateInput = document.getElementById("date")
@@ -128,3 +135,76 @@ if (window.location.pathname.endsWith("/reservations.html")) {
 }
 
 
+// Form validation (contacts.html)
+
+if (window.location.pathname.endsWith("/contacts.html")) {
+
+  const userNameInput = document.getElementById("name")
+  const userEmailInput = document.getElementById("email")
+  const userMessageInput = document.getElementById("message")
+  const submitButton = document.getElementById("submit")
+  const resetButton = document.getElementById("reset")
+  const contactsResultElement = document.getElementById("contactsresult")
+
+   submitButton.addEventListener('click', function () {
+
+    contactsname.textContent = ""
+    contactsemail.textContent = ""
+    contactsmessage.textContent = ""
+    contactsresult.textContent = ""
+    contactsResultElement.classList.remove("contactsresult");
+    console.log("Button CLicked")
+
+    let userName = userNameInput.value.trim()
+    let userEmail = userEmailInput.value
+    let userMessage = userMessageInput.value
+     
+    const ValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     
+    console.log(userName)
+    console.log(userEmail)
+    console.log(userMessage)
+    console.log(contactsResultElement)
+
+    switch (true) {
+      case userName === "":
+        contactsname.textContent = "Please enter your name!"
+        break;
+      case userName.length <= 2:
+        contactsname.textContent = "Please enter 3 or more characters!"
+        break;
+      case /\d/.test(userName):
+        contactsname.textContent = "Name must contain letters only. Please check spelling!"
+        break;
+      case userEmail === "":
+        contactsemail.textContent = "Please enter your email!"
+        break;
+      case !(ValidEmail.test(userEmail)):
+        contactsemail.textContent = "Please enter valid email!"
+        break;
+      case userMessage === "":
+        contactsmessage.textContent = "Please enter your message!"
+        break;
+     case userMessage.length < 10 || userMessage.length > 300:
+        contactsmessage.textContent = "Your message is too short or too long. Allowed number of characters - from 10 to 300"
+        break;
+      default:
+        contactsResultElement.classList.add("contactsresult");
+        contactsResultElement.textContent = `${userName}, thank you for your message! We will answer you as soon as possible to your email: ${userEmail}`
+        break;
+    }
+  });
+
+  resetButton.addEventListener("click", function () {
+    console.log("Button reset CLicked")
+    contactsname.textContent = ""
+    contactsemail.textContent = ""
+    contactsmessage.textContent = ""
+    contactsresult.textContent = ""
+    contactsResultElement.classList.remove("contactsresult");
+    userNameInput.value = ""
+    userEmailInput.value = ""
+    userMessageInput.value = ""
+  });
+
+}
