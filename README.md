@@ -9,7 +9,7 @@ Project Link: [https://main--lucky-jelly-66da31.netlify.app/](https://main--aest
 
 ## Built with
 
-![image](https://github.com/risyaalex/Restaurant-Website/assets/140414559/506f8aec-c058-407c-8895-9e0ebcf3c282)
+![image](https://github.com/risyaalex/Restaurant-Website/assets/140414559/3b261f4a-159f-46b7-800c-0cf2e505ed0f)
 
 ![image](https://github.com/risyaalex/Restaurant-Website/assets/140414559/d76dd37d-2c72-4598-8858-66476fdad39f)
 
