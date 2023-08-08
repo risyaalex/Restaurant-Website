@@ -49,8 +49,9 @@ if (window.location.pathname.endsWith("/gallery.html")) {
 
 // Form validation (reservations.html)
 
-if (window.location.pathname.endsWith("/reservations.html")) {
 console.log(window.location.pathname)
+
+if (window.location.pathname.endsWith("/reservations.html")) {
 
   const userNameInput = document.getElementById("name")
   const userDateInput = document.getElementById("date")
