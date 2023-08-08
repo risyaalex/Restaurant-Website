@@ -49,7 +49,6 @@ if (window.location.pathname.includes("gallery")) {
 
 // Form validation (reservations.html)
 
-console.log(window.location.pathname)
 
 if (window.location.pathname.includes("reservations")) {
 
