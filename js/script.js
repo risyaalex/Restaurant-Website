@@ -1,4 +1,4 @@
-if (window.location.pathname === "../index.html") {
+if (window.location.pathname.endsWith("/index.html")) {
 
   // Change background (.section2, index.html)
   document.addEventListener('DOMContentLoaded', function () {
@@ -25,7 +25,7 @@ if (window.location.pathname === "../index.html") {
   
 }
 
-if (window.location.pathname === "../gallery.html") {
+if (window.location.pathname.endsWith("/gallery.html")) {
   // Gallery (gallery.html)
 
   function toggleFullScreen() {
@@ -41,7 +41,7 @@ if (window.location.pathname === "../gallery.html") {
   
 }
 
-if (window.location.pathname === "../reservations.html") {
+if (window.location.pathname.endsWith("/reservations.html")) {
 
   // Form validation (reservations.html)
 
@@ -126,3 +126,5 @@ if (window.location.pathname === "../reservations.html") {
   });
 
 }
+
+
