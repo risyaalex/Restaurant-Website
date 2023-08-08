@@ -21,7 +21,7 @@ Project Link: [https://main--lucky-jelly-66da31.netlify.app/](https://main--aest
 ## Notes
 By utilizing Flexbox CSS, Grid CSS, and Bootstrap this site seamlessly adapts to a multitude of devices and screen sizes, ensuring an optimal viewing experience for users across desktops, laptops, tablets, and smartphones.
 
-![image](https://github.com/risyaalex/Restaurant-Website/assets/140414559/4de3f668-c090-4322-aef1-deda7c4e1aa3)
+![image](https://github.com/risyaalex/Restaurant-Website/assets/140414559/e20f5ed5-c102-4f39-a8ef-8083fcb6113b)
 ![image](https://github.com/risyaalex/Restaurant-Website/assets/140414559/c4e8fa44-250d-4843-b0d2-8bcab3db182f)
 
 
