@@ -1,7 +1,7 @@
 
 // Change background (.section2, index.html)
 
-if (window.location.pathname.includes("/index.html")) {
+if (window.location.href.includes("/index.html")) {
 
   document.addEventListener('DOMContentLoaded', function () {
     const section2 = document.querySelector('.section-2');
@@ -30,7 +30,7 @@ if (window.location.pathname.includes("/index.html")) {
 
 // Gallery (gallery.html)
 
-if (window.location.pathname.endsWith("/gallery.html")) {
+if (window.location.href.includes("/gallery.html")) {
 
 
   function toggleFullScreen() {
@@ -49,7 +49,7 @@ if (window.location.pathname.endsWith("/gallery.html")) {
 
 // Form validation (reservations.html)
 
-if (window.location.pathname.includes("/reservations.html")) {
+if (window.location.href.includes("/reservations.html")) {
 
 
   const userNameInput = document.getElementById("name")
@@ -137,7 +137,7 @@ if (window.location.pathname.includes("/reservations.html")) {
 
 // Form validation (contacts.html)
 
-if (window.location.pathname.includes("contacts.html")) {
+if (window.location.href.includes("contacts.html")) {
 
   const userNameInput = document.getElementById("name")
   const userEmailInput = document.getElementById("email")
