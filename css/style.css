@@ -432,7 +432,7 @@ article .text ol {
 .error {
     color: rgb(214, 20, 20);
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 .reservationsresult {
@@ -440,6 +440,18 @@ article .text ol {
     text-align: center;
     background-color: rgb(178, 255, 229);
 }
+
+.error a {
+    color:#333;
+}
+.error a:hover {
+    text-decoration: none;
+}
+
+.error a:active {
+    color: #999;
+}
+
 
 /* Contacts */
 

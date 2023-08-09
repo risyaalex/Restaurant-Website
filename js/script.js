@@ -1,7 +1,7 @@
 
 // Change background (.section2, index.html)
 
-if (window.location.pathname.includes("index")) {
+
 
   document.addEventListener('DOMContentLoaded', function () {
     const section2 = document.querySelector('.section-2');
@@ -25,12 +25,12 @@ if (window.location.pathname.includes("index")) {
 
   });
   
-}
+
 
 
 // Gallery (gallery.html)
 
-if (window.location.pathname.includes("gallery")) {
+
 
 
   function toggleFullScreen() {
@@ -44,81 +44,131 @@ if (window.location.pathname.includes("gallery")) {
     }
   });
   
-}
 
 
 // Form validation (reservations.html)
-
-
-if (window.location.pathname.includes("reservations")) {
 
   const userNameInput = document.getElementById("name")
   const userDateInput = document.getElementById("date")
   const userTimeInput = document.getElementById("time")
   const userGuestsInput = document.getElementById("guests")
-  const submitButton = document.getElementById("submit")
-  const resetButton = document.getElementById("reset")
+  const submitReservationsButton = document.getElementById("submitReservationsButton")
+  const resetReservationsButton = document.getElementById("resetReservationsButton")
   const reservationsResultElement = document.getElementById("reservationsresult")
+  
+if (userGuestsInput) {
 
-  submitButton.addEventListener('click', function () {
+ // // Monday selection disabled
 
+  userDateInput.addEventListener("change", function () {
     reservationsname.textContent = ""
     reservationsdate.textContent = ""
-    reservationstime.textContent = ""
-    reservationsguests.textContent = ""
-    reservationsresult.textContent = ""
-    reservationsResultElement.classList.remove("reservationsresult");
-    console.log("Button CLicked")
+    let selectedDate = new Date(userDateInput.value)
+    let day = selectedDate.getDay()
 
-    let userName = userNameInput.value.trim()
-    let userDate = userDateInput.value
-    let userTime = userTimeInput.value
-    let userGuests = userGuestsInput.value
-    console.log(userName)
-    console.log(userDate)
-    console.log(userTime)
-    console.log(reservationsResultElement)
+    console.log(day)
 
-    switch (true) {
-      case userName === "":
-        reservationsname.textContent = "Please enter your name!"
-        break;
-      case userName.length <= 2:
-        reservationsname.textContent = "Please enter 3 or more characters!"
-        break;
-      case /\d/.test(userName):
-        reservationsname.textContent = "Name must contain letters only. Please check spelling!"
-        break;
-      case userDate === "":
-        reservationsdate.textContent = "Please select a date!"
-        break;
-      case userTime === "":
-        reservationstime.textContent = "Please select a time!"
-        break;
-      case userGuests === "":
-        reservationsguests.textContent = "Please select number of guests!"
-        break;
-      case userGuests == 0:
-        reservationsguests.textContent = "The number of guests must be greater than 0. Please check the entered value!"
-        break;
-      default:
-        switch (true) {
-          case userGuests == 1:
-            reservationsResultElement.classList.add("reservationsresult");
-            reservationsresult.textContent = `${userName}, thanks for your reservation!
-          We will be happy to meet you on ${userDate} at ${userTime}`
-            break;
-          case userGuests > 1:
-            reservationsResultElement.classList.add("reservationsresult");
-            reservationsresult.textContent = `${userName}, thanks for reservation!
-          We will be happy to meet your company of ${userGuests} people on ${userDate} at ${userTime}`
-            break;
-        }
-        break;
+    if (day === 0) {
+      reservationsdate.textContent = "Sorry we are closed on Monday :("
+      userDateInput.value = ""
     }
+
   });
 
-  resetButton.addEventListener("click", function () {
+  // // Time selection disabled
+
+  userTimeInput.addEventListener("change", function () {
+    reservationstime.textContent = ""
+    let selectedDate = new Date(userDateInput.value)
+    let day = selectedDate.getDay()
+
+    let selectedTime = userTimeInput.value
+    const selectedHour = new Date(`2000-01-01T${selectedTime}`).getHours();
+
+
+    if (day == 1 || day == 2 || day == 3) {
+      if (selectedHour >= 16 && selectedHour <= 22) {
+        console.log(selectedHour)
+      } else {
+        reservationstime.textContent = `Sorry, our restaurant opening hours on this day are from 4pm to 11pm. Please select a valid time!`
+        userTimeInput.value = ""
+      }
+    }
+    if (day == 4 || day == 5 || day == 6) {
+      if (selectedHour >= 13 && selectedHour <= 23) {
+        console.log(selectedHour)
+      } else {
+        reservationstime.textContent = `Sorry, our restaurant opening hours on this day are from 1pm to 12am. Please select a valid time!`
+        userTimeInput.value = ""
+      }
+    }
+
+  });
+
+submitReservationsButton.addEventListener('click', function () {
+
+  reservationsname.textContent = ""
+  reservationsdate.textContent = ""
+  reservationstime.textContent = ""
+  reservationsguests.textContent = ""
+  reservationsresult.textContent = ""
+  reservationsResultElement.classList.remove("reservationsresult");
+  console.log("Button CLicked")
+
+  let userName = userNameInput.value.trim()
+  let userDate = userDateInput.value
+  let userTime = userTimeInput.value
+  let userGuests = userGuestsInput.value
+  console.log(userName)
+  console.log(userDate)
+  console.log(userTime)
+  console.log(reservationsResultElement)
+
+  switch (true) {
+    case userName === "":
+      reservationsname.textContent = "Please enter your name!"
+      break;
+    case userName.length <= 2:
+      reservationsname.textContent = "Please enter 3 or more characters!"
+      break;
+    case /\d/.test(userName):
+      reservationsname.textContent = "Name must contain letters only. Please check spelling!"
+      break;
+    case userDate === "":
+      reservationsdate.textContent = "Please select a date!"
+      break;
+    case userTime === "":
+      reservationstime.textContent = "Please select a time!"
+      break;
+    case userGuests === "":
+      reservationsguests.textContent = "Please select number of guests!"
+      break;
+    case userGuests <= 0:
+      reservationsguests.textContent = "The number of guests must be greater than 0. Please check the entered value!"
+      break;
+    case userGuests >= 10:
+      let reservationsGuestsHtml = "The maximum number of guests should be no more than 10. If you want to book our restaurant for a group of more than 10 people, please contact our administrator <a href=\"mailto:info@malmorestaurant.com.aa\">info@malmorestaurant.com.aa</a>"
+      reservationsguests.innerHTML = reservationsGuestsHtml;
+      break;  
+    default:
+      switch (true) {
+        case userGuests == 1:
+          reservationsResultElement.classList.add("reservationsresult");
+          reservationsresult.textContent = `${userName}, thanks for your reservation!
+          We will be happy to meet you on ${userDate} at ${userTime}`
+          break;
+        case userGuests > 1:
+          reservationsResultElement.classList.add("reservationsresult");
+          reservationsresult.textContent = `${userName}, thanks for reservation!
+          We will be happy to meet your company of ${userGuests} people on ${userDate} at ${userTime}`
+          break;
+      }
+      break;
+  }
+
+});
+
+resetReservationsButton.addEventListener("click", function () {
     console.log("Button reset CLicked")
     reservationsname.textContent = ""
     reservationsdate.textContent = ""
@@ -130,72 +180,78 @@ if (window.location.pathname.includes("reservations")) {
     userDateInput.value = ""
     userTimeInput.value = ""
     userGuestsInput.value = ""
-  });
+});
+  
+ 
 
+  
 }
+
+
 
 
 // Form validation (contacts.html)
 
-if (window.location.pathname.includes("contacts")) {
-
-  const userNameInput = document.getElementById("name")
   const userEmailInput = document.getElementById("email")
   const userMessageInput = document.getElementById("message")
-  const submitButton = document.getElementById("submit")
-  const resetButton = document.getElementById("reset")
+  const submitContactsButton  = document.getElementById("submitContactsButton")
+  const resetContactsButton = document.getElementById("resetContactsButton")
   const contactsResultElement = document.getElementById("contactsresult")
+  
+  if (userEmailInput) {
 
-   submitButton.addEventListener('click', function () {
+  submitContactsButton.addEventListener('click', function () {
 
-    contactsname.textContent = ""
-    contactsemail.textContent = ""
-    contactsmessage.textContent = ""
-    contactsresult.textContent = ""
-    contactsResultElement.classList.remove("contactsresult");
-    console.log("Button CLicked")
+      contactsname.textContent = ""
+      contactsemail.textContent = ""
+      contactsmessage.textContent = ""
+      contactsresult.textContent = ""
+      contactsResultElement.classList.remove("contactsresult");
+      console.log("Button CLicked")
 
-    let userName = userNameInput.value.trim()
-    let userEmail = userEmailInput.value
-    let userMessage = userMessageInput.value
+      let userName = userNameInput.value.trim()
+      let userEmail = userEmailInput.value
+      let userMessage = userMessageInput.value
      
-    const ValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const ValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
      
-    console.log(userName)
-    console.log(userEmail)
-    console.log(userMessage)
-    console.log(contactsResultElement)
+      console.log(userName)
+      console.log(userEmail)
+      console.log(userMessage)
+      console.log(contactsResultElement)
 
-    switch (true) {
-      case userName === "":
-        contactsname.textContent = "Please enter your name!"
-        break;
-      case userName.length <= 2:
-        contactsname.textContent = "Please enter 3 or more characters!"
-        break;
-      case /\d/.test(userName):
-        contactsname.textContent = "Name must contain letters only. Please check spelling!"
-        break;
-      case userEmail === "":
-        contactsemail.textContent = "Please enter your email!"
-        break;
-      case !(ValidEmail.test(userEmail)):
-        contactsemail.textContent = "Please enter valid email!"
-        break;
-      case userMessage === "":
-        contactsmessage.textContent = "Please enter your message!"
-        break;
-     case userMessage.length < 10 || userMessage.length > 300:
-        contactsmessage.textContent = "Your message is too short or too long. Allowed number of characters - from 10 to 300"
-        break;
-      default:
-        contactsResultElement.classList.add("contactsresult");
-        contactsResultElement.textContent = `${userName}, thank you for your message! We will answer you as soon as possible to your email: ${userEmail}`
-        break;
-    }
-  });
+      switch (true) {
+        case userName === "":
+          contactsname.textContent = "Please enter your name!"
+          break;
+        case userName.length <= 2:
+          contactsname.textContent = "Please enter 3 or more characters!"
+          break;
+        case /\d/.test(userName):
+          contactsname.textContent = "Name must contain letters only. Please check spelling!"
+          break;
+        case userEmail === "":
+          contactsemail.textContent = "Please enter your email!"
+          break;
+        case !(ValidEmail.test(userEmail)):
+          contactsemail.textContent = "Please enter valid email!"
+          break;
+        case userMessage === "":
+          contactsmessage.textContent = "Please enter your message!"
+          break;
+        case userMessage.length < 10 || userMessage.length > 300:
+          contactsmessage.textContent = "Your message is too short or too long. Allowed number of characters - from 10 to 300"
+          break;
+        default:
+          contactsResultElement.classList.add("contactsresult");
+          contactsResultElement.textContent = `${userName}, thank you for your message! We will answer you as soon as possible to your email: ${userEmail}`
+          break;
+      }
+     
+    });
 
-  resetButton.addEventListener("click", function () {
+
+  resetContactsButton.addEventListener("click", function () {
     console.log("Button reset CLicked")
     contactsname.textContent = ""
     contactsemail.textContent = ""
@@ -207,4 +263,4 @@ if (window.location.pathname.includes("contacts")) {
     userMessageInput.value = ""
   });
 
-}
+    }
