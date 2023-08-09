@@ -74,6 +74,7 @@ if (userGuestsInput) {
     }
 
   });
+  // end
 
   // // Time selection disabled
 
@@ -82,9 +83,16 @@ if (userGuestsInput) {
     let selectedDate = new Date(userDateInput.value)
     let day = selectedDate.getDay()
 
+    if (isNaN(day)) {
+        reservationstime.textContent = `Sorry, visiting day not selected! `
+      userTimeInput.value = ""
+      return
+    }
+
     let selectedTime = userTimeInput.value
     const selectedHour = new Date(`2000-01-01T${selectedTime}`).getHours();
 
+    console.log(day)
 
     if (day == 1 || day == 2 || day == 3) {
       if (selectedHour >= 16 && selectedHour <= 22) {
@@ -100,10 +108,12 @@ if (userGuestsInput) {
       } else {
         reservationstime.textContent = `Sorry, our restaurant opening hours on this day are from 1pm to 12am. Please select a valid time!`
         userTimeInput.value = ""
-      }
+      }     
     }
 
   });
+
+  // end
 
 submitReservationsButton.addEventListener('click', function () {
 
